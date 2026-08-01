@@ -24,4 +24,8 @@
     {% endfor %}
 
     <h3>Total: Rs. {{ total }}</h3>
+
+    {% if cart_items %}
+        <a href="{% url 'checkout' %}">Proceed to Checkout</a>
+    {% endif %}
 {% endblock %}
