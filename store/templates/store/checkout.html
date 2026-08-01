@@ -1,0 +1,21 @@
+{% extends "store/base.html" %}
+
+{% block title %}Checkout - SimpleStore{% endblock %}
+
+{% block content %}
+    <h2>Checkout</h2>
+
+    {% for item in cart_items %}
+        <p>{{ item.product.name }} x {{ item.quantity }} = Rs. {{ item.subtotal }}</p>
+    {% endfor %}
+
+    <h3>Total: Rs. {{ total }}</h3>
+
+    <form method="post">
+        {% csrf_token %}
+        <p><label>Full Name: <input type="text" name="full_name" required></label></p>
+        <p><label>Address: <input type="text" name="address" required></label></p>
+        <p><label>Phone: <input type="text" name="phone" required></label></p>
+        <button type="submit">Place Order</button>
+    </form>
+{% endblock %}

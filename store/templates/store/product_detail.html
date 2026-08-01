@@ -1,0 +1,13 @@
+{% extends "store/base.html" %}
+
+{% block title %}{{ product.name }} - SimpleStore{% endblock %}
+
+{% block content %}
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="300">
+    {% endif %}
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p><strong>Price:</strong> Rs. {{ product.price }}</p>
+    <p><strong>In Stock:</strong> {{ product.stock }}</p>
+{% endblock %}

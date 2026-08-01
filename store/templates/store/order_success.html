@@ -1,0 +1,8 @@
+{% extends "store/base.html" %}
+
+{% block title %}Order Success - SimpleStore{% endblock %}
+
+{% block content %}
+    <h2>Thank you! Your order has been placed successfully.</h2>
+    <a href="{% url 'product_list' %}">Continue Shopping</a>
+{% endblock %}

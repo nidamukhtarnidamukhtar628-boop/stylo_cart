@@ -1,0 +1,22 @@
+{% extends "store/base.html" %}
+
+{% block title %}Products - SimpleStore{% endblock %}
+
+{% block content %}
+    <h2>Our Products</h2>
+
+    {% for product in products %}
+        <div>
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="150">
+            {% endif %}
+            <h3><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h3>
+            <p>{{ product.description }}</p>
+            <p>Price: Rs. {{ product.price }}</p>
+            <a href="{% url 'cart_add' product.id %}">Add to Cart</a>
+        </div>
+        <hr>
+    {% empty %}
+        <p>No products available yet.</p>
+    {% endfor %}
+{% endblock %}
