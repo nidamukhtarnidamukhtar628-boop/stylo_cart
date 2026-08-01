@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-dgpn1z=%jt5i*a!_q2&uig+^6eo5d)22&lq^xcbsof(ov#ipm-
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com', '127.0.0.1', 'localhost']
 
 
 INSTALLED_APPS = [
@@ -83,6 +83,7 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
